@@ -17,8 +17,8 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#c5dce9]/60 via-[#c5dce9]/20 to-transparent" />
 
         {/* Title overlaid — upper-left, near groom's shoulder */}
-        <div className="absolute inset-0 flex items-start pt-[18%]">
-          <div className="pl-[22%] max-w-[55%]">
+        <div className="absolute inset-0 flex items-start pt-[12%]">
+          <div className="pl-[12%] max-w-[55%]">
             <h1 className="font-[family-name:var(--font-script)] text-[56pt] sm:text-[72pt] text-[#1e3348] leading-tight rotate-[-15deg]">
               Jim and Maria<br />got hitched!
             </h1>
@@ -30,7 +30,7 @@ export default function HomePage() {
       <section className="flex flex-col items-center text-center px-6 py-16">
         <div className="w-16 h-px bg-[#d4a5a5] mx-auto mb-8" />
         <p className="font-[family-name:var(--font-cormorant)] text-xl font-light text-[#4d6b7e] max-w-lg mx-auto leading-relaxed mb-14">
-          Did you think we were going to get MARRIED and not throw an epic party? Think again! We request the honor of your presence at Middle Child Clubhouse on Saturday, November 14th, 2026. More details to follow soon.
+          Did you think we were going to get MARRIED and not throw an epic party? Think again! We request the honor of your presence at Middle Child Clubhouse on Saturday, November 14th, 2026. More details below.
         </p>
         <div className="flex gap-4 flex-wrap justify-center">
           <Link
