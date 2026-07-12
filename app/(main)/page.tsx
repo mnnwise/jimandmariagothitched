@@ -34,6 +34,12 @@ export default function HomePage() {
         </p>
         <div className="flex gap-4 flex-wrap justify-center">
           <Link
+            href="/details"
+            className="px-8 py-3 bg-[#1e3348] text-white text-xs tracking-[0.2em] uppercase font-light hover:bg-[#2d4e66] transition-colors"
+          >
+            The Details
+          </Link>
+          <Link
             href="/photos"
             className="px-8 py-3 bg-[#d4a5a5] text-white text-xs tracking-[0.2em] uppercase font-light hover:bg-[#c08888] transition-colors"
           >
