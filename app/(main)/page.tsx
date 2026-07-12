@@ -16,12 +16,9 @@ export default function HomePage() {
         {/* dark gradient on left so text is legible over wallpaper */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#c5dce9]/60 via-[#c5dce9]/20 to-transparent" />
 
-        {/* Title overlaid on left */}
-        <div className="absolute inset-0 flex items-center">
-          <div className="pl-8 sm:pl-16 max-w-[50%]">
-            <p className="text-xs tracking-[0.3em] uppercase text-[#b06070] mb-4 font-light">
-              Together forever
-            </p>
+        {/* Title overlaid — upper-left, near groom's shoulder */}
+        <div className="absolute inset-0 flex items-start pt-[18%]">
+          <div className="pl-[22%] max-w-[55%]">
             <h1 className="font-[family-name:var(--font-script)] text-[56pt] sm:text-[72pt] text-[#1e3348] leading-tight rotate-[-15deg]">
               Jim and Maria<br />got hitched!
             </h1>
