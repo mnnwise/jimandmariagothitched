@@ -4,8 +4,27 @@ import Image from 'next/image'
 export default function HomePage() {
   return (
     <div className="flex flex-col">
-      {/* Hero — full-bleed photo with title overlaid on left */}
-      <section className="relative w-full h-[85vh] overflow-hidden">
+
+      {/* ── MOBILE hero: photo stacked above title ── */}
+      <section className="sm:hidden flex flex-col">
+        <div className="relative w-full h-[55vh]">
+          <Image
+            src="/photos/M and J-130.jpg"
+            alt="Jim and Maria"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+        </div>
+        <div className="text-center py-8 px-6 bg-[#c5dce9]">
+          <h1 className="font-[family-name:var(--font-script)] text-[52pt] text-[#1e3348] leading-tight rotate-[-15deg] inline-block">
+            Jim and Maria<br />got hitched!
+          </h1>
+        </div>
+      </section>
+
+      {/* ── DESKTOP hero: text overlaid on photo ── */}
+      <section className="hidden sm:block relative w-full h-[85vh] overflow-hidden">
         <Image
           src="/photos/M and J-130.jpg"
           alt="Jim and Maria"
@@ -13,13 +32,10 @@ export default function HomePage() {
           className="object-cover object-center"
           priority
         />
-        {/* dark gradient on left so text is legible over wallpaper */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#c5dce9]/60 via-[#c5dce9]/20 to-transparent" />
-
-        {/* Title overlaid — upper-left, near groom's shoulder */}
         <div className="absolute inset-0 flex items-start pt-[12%]">
           <div className="pl-[12%] max-w-[55%]">
-            <h1 className="font-[family-name:var(--font-script)] text-[56pt] sm:text-[72pt] text-[#1e3348] leading-tight rotate-[-15deg]">
+            <h1 className="font-[family-name:var(--font-script)] text-[72pt] text-[#1e3348] leading-tight rotate-[-15deg]">
               Jim and Maria<br />got hitched!
             </h1>
           </div>
@@ -53,6 +69,7 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
+
     </div>
   )
 }
