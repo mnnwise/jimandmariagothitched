@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function HomePage() {
   return (
@@ -11,15 +12,23 @@ export default function HomePage() {
         <p className="text-xs tracking-[0.3em] uppercase text-[#b06070] mb-6 font-light">
           Together forever
         </p>
-        <h1 className="font-[family-name:var(--font-script)] text-[72pt] text-[#1e3348] leading-tight mb-4 rotate-[-15deg]">
+        <h1 className="font-[family-name:var(--font-script)] text-[72pt] text-[#1e3348] leading-tight mb-8 rotate-[-15deg]">
           Jim and Maria<br />got hitched!
         </h1>
-        <div className="w-16 h-px bg-[#d4a5a5] mx-auto my-6" />
-        <p className="font-[family-name:var(--font-cormorant)] text-2xl italic font-light text-[#4d6b7e] mb-2">
-          Saturday, April 25th, 2026
-        </p>
-        <p className="text-sm tracking-widest uppercase text-[#4d6b7e] font-light mb-14">
-          Las Vegas, Nevada
+
+        <div className="relative w-72 h-96 sm:w-80 sm:h-[420px] shadow-xl mb-8 rounded-sm overflow-hidden">
+          <Image
+            src="/photos/M and J-130.jpg"
+            alt="Jim and Maria"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+
+        <div className="w-16 h-px bg-[#d4a5a5] mx-auto mb-8" />
+        <p className="font-[family-name:var(--font-cormorant)] text-xl font-light text-[#4d6b7e] max-w-lg mx-auto leading-relaxed mb-14">
+          Did you think we were going to get MARRIED and not throw an epic party? Think again! We request the honor of your presence at Middle Child Clubhouse on Saturday, November 14th, 2026. More details to follow soon.
         </p>
         <div className="flex gap-4 flex-wrap justify-center">
           <Link
