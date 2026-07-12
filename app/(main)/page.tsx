@@ -17,7 +17,11 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#c5dce9]/40 via-[#c5dce9]/10 to-transparent" />
         <div className="absolute top-5 left-5">
           <h1 className="font-[family-name:var(--font-script)] text-[36pt] text-[#1e3348] leading-tight rotate-[-15deg] text-center">
-            Jim<br />and<br />Maria<br />got<br />hitched!
+            <span className="block">Jim</span>
+            <span className="block">and</span>
+            <span className="block">Maria</span>
+            <span className="block -translate-x-[5%]">got</span>
+            <span className="block -translate-x-[5%]">hitched!</span>
           </h1>
         </div>
       </section>
