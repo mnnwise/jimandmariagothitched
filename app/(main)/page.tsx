@@ -5,42 +5,19 @@ export default function HomePage() {
   return (
     <div className="flex flex-col">
 
-      {/* ── MOBILE hero: photo with text overlaid upper-left ── */}
-      <section className="sm:hidden relative w-full h-[55vh]">
-        <Image
-          src="/photos/M and J-75 copy.jpg"
-          alt="Jim and Maria"
-          fill
-          className="object-cover object-center"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#c5dce9]/40 via-[#c5dce9]/10 to-transparent" />
-        <div className="absolute top-5 left-5">
-          <h1 className="font-[family-name:var(--font-script)] text-[36pt] text-[#1e3348] leading-tight rotate-[-15deg] text-center">
-            <span className="block">Jim</span>
-            <span className="block">and</span>
-            <span className="block">Maria</span>
-            <span className="block -translate-x-[5%]">got</span>
-            <span className="block -translate-x-[5%]">hitched!</span>
+      {/* ── Hero: title + two photo strips ── */}
+      <section className="w-full bg-[#c5dce9] flex flex-col sm:flex-row items-center justify-center gap-10 sm:gap-20 px-8 py-16 sm:py-20 overflow-hidden">
+        <div className="flex-shrink-0 text-center">
+          <h1 className="font-[family-name:var(--font-script)] text-[52pt] sm:text-[72pt] text-[#1e3348] leading-tight rotate-[-15deg] inline-block">
+            Jim and Maria<br />got hitched!
           </h1>
         </div>
-      </section>
-
-      {/* ── DESKTOP hero: text overlaid on photo ── */}
-      <section className="hidden sm:block relative w-full h-[85vh] overflow-hidden">
-        <Image
-          src="/photos/M and J-75 copy.jpg"
-          alt="Jim and Maria"
-          fill
-          className="object-cover object-center"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#c5dce9]/60 via-[#c5dce9]/20 to-transparent" />
-        <div className="absolute inset-0 flex items-start pt-[12%]">
-          <div className="pl-[12%] max-w-[55%]">
-            <h1 className="font-[family-name:var(--font-script)] text-[72pt] text-[#1e3348] leading-tight rotate-[-15deg]">
-              Jim and Maria<br />got hitched!
-            </h1>
+        <div className="flex gap-4 sm:gap-6 items-center">
+          <div className="relative w-28 sm:w-40 h-72 sm:h-[440px] rotate-[-7deg] shadow-xl overflow-hidden flex-shrink-0">
+            <Image src="/photos/1000036139.jpg" alt="Photo strip" fill className="object-cover" priority />
+          </div>
+          <div className="relative w-28 sm:w-40 h-72 sm:h-[440px] rotate-[6deg] shadow-xl overflow-hidden flex-shrink-0">
+            <Image src="/photos/1000036140.jpg" alt="Photo strip" fill className="object-cover" priority />
           </div>
         </div>
       </section>
