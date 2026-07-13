@@ -6,18 +6,18 @@ export default function HomePage() {
     <div className="flex flex-col">
 
       {/* ── Hero: title + two photo strips ── */}
-      <section className="w-full bg-[#c5dce9] flex flex-col sm:flex-row items-center justify-center gap-10 sm:gap-20 px-8 py-16 sm:py-20 overflow-hidden">
+      <section className="w-full bg-[#c5dce9] flex flex-col sm:flex-row items-center justify-center gap-10 sm:gap-16 px-8 py-12 sm:py-16">
         <div className="flex-shrink-0 text-center">
-          <h1 className="font-[family-name:var(--font-script)] text-[52pt] sm:text-[72pt] text-[#1e3348] leading-tight rotate-[-15deg] inline-block">
+          <h1 className="font-[family-name:var(--font-script)] text-[56pt] sm:text-[84pt] text-[#1e3348] leading-tight rotate-[-15deg] inline-block">
             Jim and Maria<br />got hitched!
           </h1>
         </div>
-        <div className="flex gap-4 sm:gap-6 items-center">
-          <div className="relative w-28 sm:w-40 h-72 sm:h-[440px] rotate-[-7deg] shadow-xl overflow-hidden flex-shrink-0">
-            <Image src="/photos/1000036139.jpg" alt="Photo strip" fill className="object-cover" priority />
+        <div className="flex gap-6 sm:gap-10 items-center">
+          <div className="rotate-[-7deg] shadow-xl flex-shrink-0">
+            <Image src="/photos/1000036139.jpg" alt="Photo strip" width={658} height={3289} className="h-[52vh] sm:h-[68vh] w-auto" priority />
           </div>
-          <div className="relative w-28 sm:w-40 h-72 sm:h-[440px] rotate-[6deg] shadow-xl overflow-hidden flex-shrink-0">
-            <Image src="/photos/1000036140.jpg" alt="Photo strip" fill className="object-cover" priority />
+          <div className="rotate-[6deg] shadow-xl flex-shrink-0">
+            <Image src="/photos/1000036140.jpg" alt="Photo strip" width={656} height={3339} className="h-[52vh] sm:h-[68vh] w-auto" priority />
           </div>
         </div>
       </section>
