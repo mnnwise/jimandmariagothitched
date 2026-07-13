@@ -8,7 +8,7 @@ export default function HomePage() {
       {/* ── MOBILE hero: photo with text overlaid upper-left ── */}
       <section className="sm:hidden relative w-full h-[55vh]">
         <Image
-          src="/photos/M and J-130.jpg"
+          src="/photos/M and J-75 copy.jpg"
           alt="Jim and Maria"
           fill
           className="object-cover object-center"
@@ -29,7 +29,7 @@ export default function HomePage() {
       {/* ── DESKTOP hero: text overlaid on photo ── */}
       <section className="hidden sm:block relative w-full h-[85vh] overflow-hidden">
         <Image
-          src="/photos/M and J-130.jpg"
+          src="/photos/M and J-75 copy.jpg"
           alt="Jim and Maria"
           fill
           className="object-cover object-center"
