@@ -17,7 +17,7 @@ export default function DetailsPage() {
         <section>
           <p className="text-xs tracking-[0.25em] uppercase text-[#b06070] mb-4 font-light">The party</p>
           <p className="text-base text-[#4d6b7e] font-light leading-relaxed">
-            We are doing a full buy out of one of our favorite Fishtown restaurants, Middle Child, to host this shindig. Please join us for drinks, dinner, and dancing on Saturday, November 14th at 6:30pm. We&apos;ll close things down around midnight.
+            We are renting out one of our favorite Fishtown restaurants, Middle Child Clubhouse (1232 N Front St.), for the evening. Please join us for drinks, dinner, and dancing on Saturday, November 14th at 6:30pm. We&apos;ll close things down around midnight.
           </p>
         </section>
 
@@ -27,10 +27,7 @@ export default function DetailsPage() {
         <section>
           <p className="text-xs tracking-[0.25em] uppercase text-[#b06070] mb-4 font-light">Suggested attire</p>
           <p className="text-base text-[#4d6b7e] font-light leading-relaxed">
-            The happy couple encourages you to dress as fun and wild as you dare! Do you have a vegas showgirl outfit gathering dust in your closet? Care to give your own wedding dress another moment in the sun? Any random chance you may or may not have an Austin Powers costume tucked away in the drawer somewhere? The more over the top, the better.
-          </p>
-          <p className="text-base text-[#4d6b7e] font-light leading-relaxed mt-4">
-            Alternatively, cocktail attire also works :)
+            Technically speaking, we&apos;re looking for cocktail attire, but the happy couple encourages you to dress as fun and wild as you dare! The more over the top, the better.
           </p>
         </section>
 
