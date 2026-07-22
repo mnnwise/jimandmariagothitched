@@ -112,51 +112,54 @@ export default function RsvpPage() {
           </div>
         </div>
 
-        {/* Party size — always visible */}
-        <div>
-          <label className="block text-xs tracking-[0.2em] uppercase text-[#6C0820] font-light mb-2">
-            How big is your party?
-          </label>
-          <input
-            type="number"
-            min="1"
-            max="20"
-            value={guestCount}
-            onChange={(e) => setGuestCount(e.target.value)}
-            placeholder="0"
-            className="w-24 border-b border-[#4a76bb] bg-transparent py-3 text-base text-[#F2DCDB] placeholder:text-[#F2DCDB]/50 focus:outline-none focus:border-[#6C0820] transition-colors"
-          />
-        </div>
+        {/* Fields only shown when attending yes */}
+        {attending === 'yes' && (
+          <>
+            <div>
+              <label className="block text-xs tracking-[0.2em] uppercase text-[#6C0820] font-light mb-2">
+                How big is your party?
+              </label>
+              <input
+                type="number"
+                min="1"
+                max="20"
+                value={guestCount}
+                onChange={(e) => setGuestCount(e.target.value)}
+                placeholder="0"
+                required
+                className="w-24 border-b border-[#4a76bb] bg-transparent py-3 text-base text-[#F2DCDB] placeholder:text-[#F2DCDB]/50 focus:outline-none focus:border-[#6C0820] transition-colors"
+              />
+            </div>
 
-        {/* Dietary */}
-        <div>
-          <label className="block text-xs tracking-[0.2em] uppercase text-[#6C0820] font-light mb-2">
-            Dietary restrictions{' '}
-            <span className="normal-case tracking-normal text-[#F2DCDB]/50">— optional</span>
-          </label>
-          <input
-            type="text"
-            value={dietary}
-            onChange={(e) => setDietary(e.target.value)}
-            placeholder="e.g. vegetarian, nut allergy"
-            className="w-full border-b border-[#4a76bb] bg-transparent py-3 text-base text-[#F2DCDB] placeholder:text-[#F2DCDB]/50 focus:outline-none focus:border-[#6C0820] transition-colors"
-          />
-        </div>
+            <div>
+              <label className="block text-xs tracking-[0.2em] uppercase text-[#6C0820] font-light mb-2">
+                Dietary restrictions{' '}
+                <span className="normal-case tracking-normal text-[#F2DCDB]/50">— optional</span>
+              </label>
+              <input
+                type="text"
+                value={dietary}
+                onChange={(e) => setDietary(e.target.value)}
+                placeholder="e.g. vegetarian, nut allergy"
+                className="w-full border-b border-[#4a76bb] bg-transparent py-3 text-base text-[#F2DCDB] placeholder:text-[#F2DCDB]/50 focus:outline-none focus:border-[#6C0820] transition-colors"
+              />
+            </div>
 
-        {/* Notes */}
-        <div>
-          <label className="block text-xs tracking-[0.2em] uppercase text-[#6C0820] font-light mb-2">
-            Anything else{' '}
-            <span className="normal-case tracking-normal text-[#F2DCDB]/50">— optional</span>
-          </label>
-          <input
-            type="text"
-            value={notes}
-            onChange={(e) => setNotes(e.target.value)}
-            placeholder="Notes, questions, confetti requests…"
-            className="w-full border-b border-[#4a76bb] bg-transparent py-3 text-base text-[#F2DCDB] placeholder:text-[#F2DCDB]/50 focus:outline-none focus:border-[#6C0820] transition-colors"
-          />
-        </div>
+            <div>
+              <label className="block text-xs tracking-[0.2em] uppercase text-[#6C0820] font-light mb-2">
+                Anything else{' '}
+                <span className="normal-case tracking-normal text-[#F2DCDB]/50">— optional</span>
+              </label>
+              <input
+                type="text"
+                value={notes}
+                onChange={(e) => setNotes(e.target.value)}
+                placeholder="Notes, questions, confetti requests…"
+                className="w-full border-b border-[#4a76bb] bg-transparent py-3 text-base text-[#F2DCDB] placeholder:text-[#F2DCDB]/50 focus:outline-none focus:border-[#6C0820] transition-colors"
+              />
+            </div>
+          </>
+        )}
 
         {error && (
           <p className="text-xs text-[#d498aa] tracking-wide">{error}</p>
