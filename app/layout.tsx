@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, Jost, Pinyon_Script } from 'next/font/google'
+import { Cormorant_Garamond, Jost } from 'next/font/google'
+import localFont from 'next/font/local'
 import './globals.css'
 
 const cormorant = Cormorant_Garamond({
@@ -15,9 +16,8 @@ const jost = Jost({
   variable: '--font-jost',
 })
 
-const pinyonScript = Pinyon_Script({
-  subsets: ['latin'],
-  weight: ['400'],
+const dreamboat = localFont({
+  src: '../public/fonts/dreamboat-font-1784653638-0/fontspring-demo-dreamboat-regular.otf',
   variable: '--font-script',
 })
 
@@ -32,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${jost.variable} ${pinyonScript.variable} h-full`}>
+    <html lang="en" className={`${cormorant.variable} ${jost.variable} ${dreamboat.variable} h-full`}>
       <body className="min-h-full flex flex-col bg-[#5A86CB] text-[#3D5D91] antialiased">
         {children}
       </body>

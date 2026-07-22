@@ -8,7 +8,7 @@ export default function HomePage() {
       {/* ── Hero: title + two photo strips ── */}
       <section className="w-full bg-[#5A86CB] flex flex-col sm:flex-row items-center justify-center gap-10 sm:gap-16 px-8 py-12 sm:py-16">
         <div className="flex-shrink-0 text-center">
-          <h1 className="font-[family-name:var(--font-script)] text-[56pt] sm:text-[84pt] text-[#3D5D91] leading-tight rotate-[-15deg] inline-block">
+          <h1 className="font-[family-name:var(--font-script)] text-[64pt] sm:text-[96pt] text-[#3D5D91] leading-tight rotate-[-15deg] inline-block">
             Jim and Maria<br />got hitched!
           </h1>
         </div>

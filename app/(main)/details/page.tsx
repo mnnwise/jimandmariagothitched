@@ -5,7 +5,7 @@ export default function DetailsPage() {
       {/* Header */}
       <div className="text-center mb-12 md:mb-16">
         <p className="text-xs tracking-[0.3em] uppercase text-[#6C0820] mb-4 font-light">Mark your calendars</p>
-        <h1 className="font-[family-name:var(--font-cormorant)] text-5xl md:text-6xl font-light text-[#3D5D91] mb-4">
+        <h1 className="font-[family-name:var(--font-script)] text-6xl md:text-7xl text-[#3D5D91] mb-4">
           The Details
         </h1>
         <div className="w-12 h-px bg-[#F2AEBC] mx-auto" />
