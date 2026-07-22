@@ -46,10 +46,10 @@ function ReserveModal({
     >
       <div className="bg-[#dce8f7] w-full sm:max-w-md sm:mx-6 p-6 sm:p-10 shadow-xl rounded-t-2xl sm:rounded-none">
         <p className="text-xs tracking-[0.25em] uppercase text-[#6C0820] mb-2 font-light">Reserve this gift</p>
-        <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-light text-[#3D5D91] mb-1">
+        <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-light text-[#F2DCDB] mb-1">
           {item.name}
         </h2>
-        <p className="text-sm text-[#3D5D91] font-light mb-7">
+        <p className="text-sm text-[#F2DCDB] font-light mb-7">
           {item.price} &mdash; {item.store}
         </p>
 
@@ -100,10 +100,10 @@ function SuccessModal({ item, onClose }: { item: RegistryItem; onClose: () => vo
           </svg>
         </div>
         <p className="text-xs tracking-[0.25em] uppercase text-[#6C0820] mb-2 font-light">Reserved!</p>
-        <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-light text-[#3D5D91] mb-3">
+        <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-light text-[#F2DCDB] mb-3">
           {item.name}
         </h2>
-        <p className="text-sm text-[#3D5D91] font-light mb-7">
+        <p className="text-sm text-[#F2DCDB] font-light mb-7">
           Thank you so much, {item.reservedBy}. The couple will be thrilled!
         </p>
         <button
@@ -158,7 +158,7 @@ export default function RegistryPage() {
           Gift Registry
         </h1>
         <div className="w-12 h-px bg-[#F2AEBC] mx-auto mb-5" />
-        <p className="text-sm text-[#3D5D91] font-light max-w-lg mx-auto leading-relaxed">
+        <p className="text-sm text-[#F2DCDB] font-light max-w-lg mx-auto leading-relaxed">
           Gifts are not needed! But if you are one of those people who will get us a gift anyway, here are a few ideas. Simply tap &ldquo;Reserve&rdquo; to let other guests know it&apos;s taken.
         </p>
       </div>
@@ -176,14 +176,14 @@ export default function RegistryPage() {
                 <p className="text-xs tracking-[0.2em] uppercase text-[#6C0820] mb-3 font-light">
                   {item.store}
                 </p>
-                <h3 className="font-[family-name:var(--font-cormorant)] text-xl font-light text-[#3D5D91] mb-2 leading-snug">
+                <h3 className="font-[family-name:var(--font-cormorant)] text-xl font-light text-[#F2DCDB] mb-2 leading-snug">
                   {item.name}
                 </h3>
-                <p className="text-xs text-[#3D5D91] font-light leading-relaxed flex-1 mb-5">
+                <p className="text-xs text-[#F2DCDB] font-light leading-relaxed flex-1 mb-5">
                   {item.description}
                 </p>
                 <div className="flex items-center justify-between mt-auto">
-                  <span className="font-[family-name:var(--font-cormorant)] text-lg text-[#3D5D91] font-light">
+                  <span className="font-[family-name:var(--font-cormorant)] text-lg text-[#F2DCDB] font-light">
                     {item.price}
                   </span>
                   <button
@@ -209,14 +209,14 @@ export default function RegistryPage() {
                     <p className="text-xs tracking-[0.2em] uppercase text-[#3D5D91] mb-3 font-light">
                       {item.store}
                     </p>
-                    <h3 className="font-[family-name:var(--font-cormorant)] text-xl font-light text-[#3D5D91] mb-2 leading-snug line-through decoration-[#F2AEBC]">
+                    <h3 className="font-[family-name:var(--font-cormorant)] text-xl font-light text-[#F2DCDB] mb-2 leading-snug line-through decoration-[#F2AEBC]">
                       {item.name}
                     </h3>
-                    <p className="text-xs text-[#3D5D91] font-light leading-relaxed flex-1 mb-5">
+                    <p className="text-xs text-[#F2DCDB] font-light leading-relaxed flex-1 mb-5">
                       {item.description}
                     </p>
                     <div className="flex items-center justify-between mt-auto">
-                      <span className="font-[family-name:var(--font-cormorant)] text-lg text-[#3D5D91] font-light">
+                      <span className="font-[family-name:var(--font-cormorant)] text-lg text-[#F2DCDB] font-light">
                         {item.price}
                       </span>
                       <span className="text-xs tracking-[0.15em] uppercase font-light text-[#F2AEBC] border border-[#f5d0da] px-4 py-2">

@@ -25,7 +25,7 @@ export default function HomePage() {
       {/* Invite text + buttons */}
       <section className="flex flex-col items-center text-center px-6 py-16">
         <div className="w-16 h-px bg-[#F2AEBC] mx-auto mb-8" />
-        <p className="font-[family-name:var(--font-cormorant)] text-xl font-light text-[#3D5D91] max-w-lg mx-auto leading-relaxed mb-14">
+        <p className="font-[family-name:var(--font-cormorant)] text-xl font-light text-[#F2DCDB] max-w-lg mx-auto leading-relaxed mb-14">
           Did you really think we were going to get MARRIED and not throw ourselves a fun ass party?
         </p>
         <div className="flex gap-4 flex-wrap justify-center">
