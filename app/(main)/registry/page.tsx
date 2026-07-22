@@ -183,9 +183,21 @@ export default function RegistryPage() {
                   {item.description}
                 </p>
                 <div className="flex items-center justify-between mt-auto">
-                  <span className="font-[family-name:var(--font-cormorant)] text-lg text-[#5A86CB] font-light">
-                    {item.price}
-                  </span>
+                  <div className="flex flex-col gap-1">
+                    <span className="font-[family-name:var(--font-cormorant)] text-lg text-[#5A86CB] font-light">
+                      {item.price}
+                    </span>
+                    {item.link && (
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs tracking-[0.15em] uppercase font-light text-[#3D5D91] underline underline-offset-2 hover:text-[#2d4a7a] transition-colors"
+                      >
+                        View item
+                      </a>
+                    )}
+                  </div>
                   <button
                     onClick={() => setSelectedItem(item)}
                     className="text-xs tracking-[0.18em] uppercase font-light px-5 py-3 bg-[#3D5D91] text-white hover:bg-[#2d4a7a] active:bg-[#2d4a7a] transition-colors touch-manipulation min-h-[44px]"

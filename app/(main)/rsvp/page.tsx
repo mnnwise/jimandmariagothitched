@@ -19,23 +19,29 @@ export default function RsvpPage() {
     setError('')
     setLoading(true)
 
-    const res = await fetch('/api/rsvp', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        name,
-        attending,
-        guest_count: guestCount ? Number(guestCount) : null,
-        dietary_restrictions: dietary,
-        notes,
-      }),
-    })
+    try {
+      const res = await fetch('/api/rsvp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name,
+          attending,
+          guest_count: guestCount ? Number(guestCount) : null,
+          dietary_restrictions: dietary,
+          notes,
+        }),
+      })
 
-    if (res.ok) {
-      setSuccess(true)
-    } else {
-      const data = await res.json()
+      if (res.ok) {
+        setSuccess(true)
+        return
+      }
+
+      const data = await res.json().catch(() => ({}))
       setError(data.error ?? 'Something went wrong. Please try again.')
+    } catch {
+      setError('Something went wrong. Please try again.')
+    } finally {
       setLoading(false)
     }
   }

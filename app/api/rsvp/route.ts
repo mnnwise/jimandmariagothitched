@@ -59,7 +59,11 @@ export async function POST(request: NextRequest) {
     submitted_at: new Date().toISOString(),
   }
 
-  await saveRsvp(rsvp)
+  try {
+    await saveRsvp(rsvp)
+  } catch {
+    return Response.json({ error: 'Failed to save your RSVP. Please try again.' }, { status: 500 })
+  }
   return Response.json(rsvp, { status: 201 })
 }
 
