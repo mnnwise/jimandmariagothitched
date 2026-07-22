@@ -35,7 +35,6 @@ export default async function AdminRsvpsPage({
 
   const attending = rsvps.filter((r) => r.attending === 'yes')
   const notAttending = rsvps.filter((r) => r.attending === 'no')
-  const maybe = rsvps.filter((r) => r.attending === 'maybe')
   const totalGuests = attending.reduce((sum, r) => sum + (r.guest_count ?? 0), 0)
 
   return (
@@ -51,7 +50,6 @@ export default async function AdminRsvpsPage({
           <div className="flex flex-wrap gap-6 text-sm text-[#F2DCDB] font-light">
             <span>✓ Attending: <strong>{attending.length}</strong> ({totalGuests} guests total)</span>
             <span>✗ Not attending: <strong>{notAttending.length}</strong></span>
-            <span>? Maybe: <strong>{maybe.length}</strong></span>
             <span>Total responses: <strong>{rsvps.length}</strong></span>
           </div>
         </div>
@@ -76,11 +74,9 @@ export default async function AdminRsvpsPage({
                     <td className="py-3 pr-6 text-[#F2DCDB] font-light text-sm whitespace-nowrap">{r.name}</td>
                     <td className="py-3 pr-6 text-sm whitespace-nowrap">
                       <span className={`text-xs tracking-[0.15em] uppercase font-light ${
-                        r.attending === 'yes' ? 'text-[#F2AEBC]' :
-                        r.attending === 'no'  ? 'text-[#d498aa]' :
-                                                'text-[#F2DCDB]'
+                        r.attending === 'yes' ? 'text-[#F2AEBC]' : 'text-[#d498aa]'
                       }`}>
-                        {r.attending === 'yes' ? 'Yes' : r.attending === 'no' ? 'No' : 'Maybe'}
+                        {r.attending === 'yes' ? 'Yes' : 'No'}
                       </span>
                     </td>
                     <td className="py-3 pr-6 text-[#F2DCDB] font-light text-sm">{r.guest_count ?? '—'}</td>
