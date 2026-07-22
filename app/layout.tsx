@@ -33,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${cormorant.variable} ${jost.variable} ${pinyonScript.variable} h-full`}>
-      <body className="min-h-full flex flex-col bg-[#c5dce9] text-[#1e3348] antialiased">
+      <body className="min-h-full flex flex-col bg-[#5A86CB] text-[#3D5D91] antialiased">
         {children}
       </body>
     </html>

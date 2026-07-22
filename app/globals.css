@@ -6,7 +6,7 @@
 
   --color-blue-50: #eef5f9;
   --color-blue-100: #d5e8f1;
-  --color-blue-200: #b8d4e3;
+  --color-blue-200: #aac5e8;
   --color-blue-300: #94bcd4;
   --color-blue-400: #6fa0bf;
   --color-blue-500: #4f87ac;
@@ -14,9 +14,9 @@
 
   --color-rose-50: #fdf4f4;
   --color-rose-100: #f5e0e0;
-  --color-rose-200: #e8c5c5;
-  --color-rose-300: #d4a5a5;
-  --color-rose-400: #c08888;
+  --color-rose-200: #f5d0da;
+  --color-rose-300: #F2AEBC;
+  --color-rose-400: #d498aa;
   --color-rose-500: #a86868;
   --color-rose-600: #8c4f4f;
 
@@ -30,8 +30,8 @@
 }
 
 :root {
-  --background: #c5dce9;
-  --foreground: #1e3348;
+  --background: #5A86CB;
+  --foreground: #3D5D91;
 }
 
 body {
