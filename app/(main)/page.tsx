@@ -30,6 +30,12 @@ export default function HomePage() {
         </p>
         <div className="flex gap-4 flex-wrap justify-center">
           <Link
+            href="/rsvp"
+            className="px-8 py-3 bg-[#F2AEBC] text-white text-xs tracking-[0.2em] uppercase font-light hover:bg-[#d498aa] transition-colors"
+          >
+            RSVP Here
+          </Link>
+          <Link
             href="/details"
             className="px-8 py-3 bg-[#3D5D91] text-white text-xs tracking-[0.2em] uppercase font-light hover:bg-[#2d4a7a] transition-colors"
           >
