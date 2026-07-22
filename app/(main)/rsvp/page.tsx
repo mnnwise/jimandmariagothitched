@@ -2,12 +2,12 @@
 
 import { useState } from 'react'
 
-type Attending = 'yes' | 'no' | 'maybe' | ''
+type Attending = 'yes' | 'no' | ''
 
 export default function RsvpPage() {
   const [name, setName] = useState('')
   const [attending, setAttending] = useState<Attending>('')
-  const [guestCount, setGuestCount] = useState('1')
+  const [guestCount, setGuestCount] = useState('')
   const [dietary, setDietary] = useState('')
   const [notes, setNotes] = useState('')
   const [loading, setLoading] = useState(false)
@@ -25,7 +25,7 @@ export default function RsvpPage() {
       body: JSON.stringify({
         name,
         attending,
-        guest_count: attending === 'yes' ? Number(guestCount) : null,
+        guest_count: guestCount ? Number(guestCount) : null,
         dietary_restrictions: dietary,
         notes,
       }),
@@ -95,7 +95,7 @@ export default function RsvpPage() {
             Will you be there?
           </label>
           <div className="flex gap-3 flex-wrap">
-            {(['yes', 'no', 'maybe'] as const).map((opt) => (
+            {(['yes', 'no'] as const).map((opt) => (
               <button
                 key={opt}
                 type="button"
@@ -106,29 +106,27 @@ export default function RsvpPage() {
                     : 'border border-[#4a76bb] text-[#F2DCDB] hover:border-[#6C0820]'
                 }`}
               >
-                {opt === 'yes' ? 'Yes!' : opt === 'no' ? 'Can\'t make it' : 'Maybe'}
+                {opt === 'yes' ? 'Yes!' : "Can't make it"}
               </button>
             ))}
           </div>
         </div>
 
-        {/* Guest count — only when attending yes */}
-        {attending === 'yes' && (
-          <div>
-            <label className="block text-xs tracking-[0.2em] uppercase text-[#6C0820] font-light mb-2">
-              Number of guests (including yourself)
-            </label>
-            <input
-              type="number"
-              min="1"
-              max="10"
-              value={guestCount}
-              onChange={(e) => setGuestCount(e.target.value)}
-              required
-              className="w-24 border-b border-[#4a76bb] bg-transparent py-3 text-base text-[#F2DCDB] focus:outline-none focus:border-[#6C0820] transition-colors"
-            />
-          </div>
-        )}
+        {/* Party size — always visible */}
+        <div>
+          <label className="block text-xs tracking-[0.2em] uppercase text-[#6C0820] font-light mb-2">
+            How big is your party?
+          </label>
+          <input
+            type="number"
+            min="1"
+            max="20"
+            value={guestCount}
+            onChange={(e) => setGuestCount(e.target.value)}
+            placeholder="0"
+            className="w-24 border-b border-[#4a76bb] bg-transparent py-3 text-base text-[#F2DCDB] placeholder:text-[#F2DCDB]/50 focus:outline-none focus:border-[#6C0820] transition-colors"
+          />
+        </div>
 
         {/* Dietary */}
         <div>

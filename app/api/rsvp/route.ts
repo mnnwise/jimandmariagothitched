@@ -5,7 +5,7 @@ import path from 'path'
 export type RsvpRecord = {
   id: string
   name: string
-  attending: 'yes' | 'no' | 'maybe'
+  attending: 'yes' | 'no'
   guest_count: number | null
   dietary_restrictions: string
   notes: string
@@ -44,11 +44,8 @@ export async function POST(request: NextRequest) {
   if (!name?.trim()) {
     return Response.json({ error: 'Name is required.' }, { status: 400 })
   }
-  if (!['yes', 'no', 'maybe'].includes(attending)) {
+  if (!['yes', 'no'].includes(attending)) {
     return Response.json({ error: 'Please select whether you\'re attending.' }, { status: 400 })
-  }
-  if (attending === 'yes' && (!guest_count || Number(guest_count) < 1)) {
-    return Response.json({ error: 'Please enter the number of guests.' }, { status: 400 })
   }
 
   const id = `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`
@@ -56,7 +53,7 @@ export async function POST(request: NextRequest) {
     id,
     name: name.trim(),
     attending,
-    guest_count: attending === 'yes' ? Number(guest_count) : null,
+    guest_count: guest_count ? Number(guest_count) : null,
     dietary_restrictions: (dietary_restrictions ?? '').trim(),
     notes: (notes ?? '').trim(),
     submitted_at: new Date().toISOString(),
