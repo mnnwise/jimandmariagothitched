@@ -18,7 +18,7 @@ export default function Nav() {
       <nav className="max-w-5xl mx-auto px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-between">
         <Link
           href="/"
-          className="font-[family-name:var(--font-cormorant)] text-2xl font-light italic tracking-wide text-[#3D5D91] hover:text-[#6C0820] transition-colors"
+          className="font-[family-name:var(--font-cormorant)] text-2xl font-light italic tracking-wide text-[#6C0820] hover:text-[#4a0016] transition-colors"
         >
           J &amp; M
         </Link>
@@ -29,8 +29,8 @@ export default function Nav() {
                 href={href}
                 className={`text-xs tracking-[0.15em] sm:tracking-[0.18em] uppercase font-light transition-colors touch-manipulation ${
                   pathname === href
-                    ? 'text-[#3D5D91] border-b border-[#3D5D91] pb-0.5'
-                    : 'text-[#3D5D91] hover:text-[#3D5D91]'
+                    ? 'text-[#6C0820] border-b border-[#6C0820] pb-0.5'
+                    : 'text-[#6C0820] hover:text-[#4a0016]'
                 }`}
               >
                 {label}

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, Jost, Praise } from 'next/font/google'
+import { Cormorant_Garamond, Jost, Corinthia } from 'next/font/google'
 import './globals.css'
 
 const cormorant = Cormorant_Garamond({
@@ -15,7 +15,7 @@ const jost = Jost({
   variable: '--font-jost',
 })
 
-const praise = Praise({
+const corinthia = Corinthia({
   subsets: ['latin'],
   weight: ['400'],
   variable: '--font-script',
@@ -32,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${jost.variable} ${praise.variable} h-full`}>
+    <html lang="en" className={`${cormorant.variable} ${jost.variable} ${corinthia.variable} h-full`}>
       <body className="min-h-full flex flex-col bg-[#5A86CB] text-[#3D5D91] antialiased">
         {children}
       </body>

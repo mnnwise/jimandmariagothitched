@@ -5,7 +5,7 @@ export default function DetailsPage() {
       {/* Header */}
       <div className="text-center mb-12 md:mb-16">
         <p className="text-xs tracking-[0.3em] uppercase text-[#6C0820] mb-4 font-light">Mark your calendars</p>
-        <h1 className="font-[family-name:var(--font-script)] text-6xl md:text-7xl text-[#3D5D91] mb-4">
+        <h1 className="font-[family-name:var(--font-script)] text-6xl md:text-7xl text-[#F2AEBC] mb-4">
           The Details
         </h1>
         <div className="w-12 h-px bg-[#F2AEBC] mx-auto" />
@@ -15,7 +15,7 @@ export default function DetailsPage() {
 
         {/* The party */}
         <section>
-          <p className="text-xs tracking-[0.25em] uppercase text-[#6C0820] mb-4 font-light">The party</p>
+          <p className="text-sm tracking-[0.25em] uppercase text-[#6C0820] mb-4 font-semibold">The party</p>
           <p className="text-base text-[#3D5D91] font-light leading-relaxed">
             We are renting out one of our favorite Fishtown restaurants, Middle Child Clubhouse (1232 N Front St.), for the evening. Please join us for drinks, dinner, and dancing on Saturday, November 14th at 6pm. We&apos;ll close things down around midnight.
           </p>
@@ -25,7 +25,7 @@ export default function DetailsPage() {
 
         {/* Attire */}
         <section>
-          <p className="text-xs tracking-[0.25em] uppercase text-[#6C0820] mb-4 font-light">Suggested attire</p>
+          <p className="text-sm tracking-[0.25em] uppercase text-[#6C0820] mb-4 font-semibold">Suggested attire</p>
           <p className="text-base text-[#3D5D91] font-light leading-relaxed">
             Technically speaking, we&apos;re looking for cocktail attire, but the happy couple encourages you to dress as fun and wild as you dare! The more over the top, the better.
           </p>
@@ -35,7 +35,7 @@ export default function DetailsPage() {
 
         {/* Accommodations */}
         <section>
-          <p className="text-xs tracking-[0.25em] uppercase text-[#6C0820] mb-4 font-light">Local accommodations</p>
+          <p className="text-sm tracking-[0.25em] uppercase text-[#6C0820] mb-4 font-semibold">Local accommodations</p>
           <p className="text-base text-[#3D5D91] font-light leading-relaxed mb-6">
             While we have not reserved a room block anywhere in particular, there are several lovely boutique hotels in the area that we can recommend:
           </p>
@@ -43,14 +43,14 @@ export default function DetailsPage() {
             <div>
               <p className="font-[family-name:var(--font-cormorant)] text-lg font-light text-[#3D5D91]">Anna &amp; Bel</p>
               <p className="text-xs text-[#3D5D91] font-light mb-1">5 minute drive to Middle Child</p>
-              <a href="https://annaandbel.com/reservations" target="_blank" rel="noopener noreferrer" className="text-xs tracking-[0.15em] uppercase font-light text-[#6C0820] hover:text-[#3D5D91] transition-colors border-b border-[#f5d0da] pb-0.5">
+              <a href="https://annaandbel.com/reservations" target="_blank" rel="noopener noreferrer" className="text-xs tracking-[0.15em] uppercase font-light text-[#6C0820] hover:text-[#4a0016] transition-colors border-b border-[#6C0820] pb-0.5">
                 Reservations
               </a>
             </div>
             <div>
               <p className="font-[family-name:var(--font-cormorant)] text-lg font-light text-[#3D5D91]">The Gas Lamp Hotel</p>
               <p className="text-xs text-[#3D5D91] font-light mb-1">10 minute drive to Middle Child</p>
-              <a href="https://thegaslamphotel.com/book" target="_blank" rel="noopener noreferrer" className="text-xs tracking-[0.15em] uppercase font-light text-[#6C0820] hover:text-[#3D5D91] transition-colors border-b border-[#f5d0da] pb-0.5">
+              <a href="https://thegaslamphotel.com/book" target="_blank" rel="noopener noreferrer" className="text-xs tracking-[0.15em] uppercase font-light text-[#6C0820] hover:text-[#4a0016] transition-colors border-b border-[#6C0820] pb-0.5">
                 Reservations
               </a>
             </div>
@@ -61,7 +61,7 @@ export default function DetailsPage() {
 
         {/* Transit */}
         <section>
-          <p className="text-xs tracking-[0.25em] uppercase text-[#6C0820] mb-4 font-light">Transit and parking</p>
+          <p className="text-sm tracking-[0.25em] uppercase text-[#6C0820] mb-4 font-semibold">Transit and parking</p>
           <p className="text-base text-[#3D5D91] font-light leading-relaxed mb-4">
             We strongly recommend taking a rideshare to the party. Street parking in the neighborhood is notoriously tricky but can be done. There is a public pay-to-park lot a few blocks north of the restaurant at 1320 N Front St. A breeze of a walk to the party.
           </p>
