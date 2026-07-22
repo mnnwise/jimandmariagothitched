@@ -3,11 +3,11 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-const links = [
+const links: { href: string; label: string; mobileLabel?: string }[] = [
   { href: '/', label: 'Home' },
   { href: '/rsvp', label: 'RSVP' },
   { href: '/photos', label: 'Photos' },
-  { href: '/details', label: 'The Details' },
+  { href: '/details', label: 'The Details', mobileLabel: 'Details' },
   { href: '/registry', label: 'Registry' },
 ]
 
@@ -24,7 +24,7 @@ export default function Nav() {
           J &amp; M
         </Link>
         <ul className="flex gap-5 sm:gap-8">
-          {links.map(({ href, label }) => (
+          {links.map(({ href, label, mobileLabel }) => (
             <li key={href}>
               <Link
                 href={href}
@@ -34,7 +34,12 @@ export default function Nav() {
                     : 'text-[#6C0820] hover:text-[#4a0016]'
                 }`}
               >
-                {label}
+                {mobileLabel ? (
+                  <>
+                    <span className="sm:hidden">{mobileLabel}</span>
+                    <span className="hidden sm:inline">{label}</span>
+                  </>
+                ) : label}
               </Link>
             </li>
           ))}

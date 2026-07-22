@@ -154,7 +154,7 @@ export default function RegistryPage() {
       {/* Header */}
       <div className="text-center mb-10 md:mb-16">
         <p className="text-xs tracking-[0.3em] uppercase text-[#6C0820] mb-4 font-light">Celebrate with us</p>
-        <h1 className="font-[family-name:var(--font-script)] text-5xl md:text-6xl text-[#F2AEBC] mb-4">
+        <h1 className="font-[family-name:var(--font-script)] text-[clamp(3.2rem,7vw,5.5rem)] text-[#F2AEBC] mb-4">
           Gift Registry
         </h1>
         <div className="w-12 h-px bg-[#F2AEBC] mx-auto mb-5" />
