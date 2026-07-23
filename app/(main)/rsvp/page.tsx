@@ -122,19 +122,25 @@ export default function RsvpPage() {
         {attending === 'yes' && (
           <>
             <div>
-              <label className="block text-xs tracking-[0.2em] uppercase text-[#6C0820] font-light mb-2">
+              <label className="block text-xs tracking-[0.2em] uppercase text-[#6C0820] font-light mb-4">
                 How big is your party?
               </label>
-              <input
-                type="number"
-                min="1"
-                max="20"
-                value={guestCount}
-                onChange={(e) => setGuestCount(e.target.value)}
-                placeholder="0"
-                required
-                className="w-24 border-b border-[#4a76bb] bg-transparent py-3 text-base text-[#F2DCDB] placeholder:text-[#F2DCDB]/50 focus:outline-none focus:border-[#6C0820] transition-colors"
-              />
+              <div className="flex gap-3 flex-wrap">
+                {([['1', 'Flying solo'], ['2', 'Me +1']] as const).map(([val, label]) => (
+                  <button
+                    key={val}
+                    type="button"
+                    onClick={() => setGuestCount(val)}
+                    className={`px-6 py-3 text-xs tracking-[0.18em] uppercase font-light transition-colors touch-manipulation ${
+                      guestCount === val
+                        ? 'bg-[#6C0820] text-white'
+                        : 'border border-[#4a76bb] text-[#F2DCDB] hover:border-[#6C0820]'
+                    }`}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
             </div>
 
             <div>
@@ -173,7 +179,7 @@ export default function RsvpPage() {
 
         <button
           type="submit"
-          disabled={loading || !name.trim() || !attending}
+          disabled={loading || !name.trim() || !attending || (attending === 'yes' && !guestCount)}
           className="w-full py-4 sm:py-3 bg-[#6C0820] text-white text-xs tracking-[0.2em] uppercase font-light hover:bg-[#4a0016] active:bg-[#4a0016] transition-colors disabled:opacity-50 disabled:cursor-not-allowed touch-manipulation"
         >
           {loading ? 'Sending…' : 'Send RSVP'}
