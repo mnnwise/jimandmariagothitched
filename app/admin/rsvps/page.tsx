@@ -1,8 +1,17 @@
 import { promises as fs } from 'fs'
 import path from 'path'
-import type { RsvpRecord } from '@/app/api/rsvp/route'
 
 export const dynamic = 'force-dynamic'
+
+type RsvpRecord = {
+  id: string
+  name: string
+  attending: 'yes' | 'no'
+  guest_count: number | null
+  dietary_restrictions: string
+  notes: string
+  submitted_at: string
+}
 
 async function getRsvps(): Promise<RsvpRecord[]> {
   if (process.env.RSVPs_KV_REST_API_URL) {
