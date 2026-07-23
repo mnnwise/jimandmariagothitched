@@ -8,9 +8,17 @@ import path from 'path'
 
 type ReservedState = Record<string, string> // id -> reservedBy name
 
+async function getKv() {
+  const { createClient } = await import('@vercel/kv')
+  return createClient({
+    url: process.env.RSVPs_KV_REST_API_URL!,
+    token: process.env.RSVPs_KV_REST_API_TOKEN!,
+  })
+}
+
 async function readReserved(): Promise<ReservedState> {
-  if (process.env.KV_REST_API_URL) {
-    const { kv } = await import('@vercel/kv')
+  if (process.env.RSVPs_KV_REST_API_URL) {
+    const kv = await getKv()
     return (await kv.hgetall<ReservedState>('reserved')) ?? {}
   }
   const file = path.join(process.cwd(), 'data', 'registry.json')
@@ -18,8 +26,8 @@ async function readReserved(): Promise<ReservedState> {
 }
 
 async function markReserved(id: string, reservedBy: string): Promise<void> {
-  if (process.env.KV_REST_API_URL) {
-    const { kv } = await import('@vercel/kv')
+  if (process.env.RSVPs_KV_REST_API_URL) {
+    const kv = await getKv()
     await kv.hset('reserved', { [id]: reservedBy })
   } else {
     const file = path.join(process.cwd(), 'data', 'registry.json')

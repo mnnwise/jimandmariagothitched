@@ -5,8 +5,12 @@ import type { RsvpRecord } from '@/app/api/rsvp/route'
 export const dynamic = 'force-dynamic'
 
 async function getRsvps(): Promise<RsvpRecord[]> {
-  if (process.env.KV_REST_API_URL) {
-    const { kv } = await import('@vercel/kv')
+  if (process.env.RSVPs_KV_REST_API_URL) {
+    const { createClient } = await import('@vercel/kv')
+    const kv = createClient({
+      url: process.env.RSVPs_KV_REST_API_URL!,
+      token: process.env.RSVPs_KV_REST_API_TOKEN!,
+    })
     const store = (await kv.hgetall<Record<string, string>>('rsvps')) ?? {}
     return Object.values(store).map((v) => JSON.parse(v))
   }

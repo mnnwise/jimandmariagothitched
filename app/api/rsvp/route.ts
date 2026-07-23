@@ -14,9 +14,17 @@ export type RsvpRecord = {
 
 type RsvpStore = Record<string, string>
 
+async function getKv() {
+  const { createClient } = await import('@vercel/kv')
+  return createClient({
+    url: process.env.RSVPs_KV_REST_API_URL!,
+    token: process.env.RSVPs_KV_REST_API_TOKEN!,
+  })
+}
+
 async function readRsvps(): Promise<RsvpRecord[]> {
-  if (process.env.KV_REST_API_URL) {
-    const { kv } = await import('@vercel/kv')
+  if (process.env.RSVPs_KV_REST_API_URL) {
+    const kv = await getKv()
     const store = (await kv.hgetall<RsvpStore>('rsvps')) ?? {}
     return Object.values(store).map((v) => JSON.parse(v))
   }
@@ -26,8 +34,8 @@ async function readRsvps(): Promise<RsvpRecord[]> {
 }
 
 async function saveRsvp(rsvp: RsvpRecord): Promise<void> {
-  if (process.env.KV_REST_API_URL) {
-    const { kv } = await import('@vercel/kv')
+  if (process.env.RSVPs_KV_REST_API_URL) {
+    const kv = await getKv()
     await kv.hset('rsvps', { [rsvp.id]: JSON.stringify(rsvp) })
   } else {
     const file = path.join(process.cwd(), 'data', 'rsvps.json')
