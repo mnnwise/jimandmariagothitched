@@ -1,8 +1,7 @@
-import type { Metadata } from 'next'
+import { promises as fs } from 'fs'
+import path from 'path'
 
 export const dynamic = 'force-dynamic'
-
-export const metadata: Metadata = { title: 'Registry Admin' }
 
 type RegistryRow = {
   id: string
@@ -14,12 +13,61 @@ type RegistryRow = {
   reservedBy: string | null
 }
 
-async function getRegistryItems(): Promise<RegistryRow[]> {
-  const baseUrl = process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : 'http://localhost:3000'
-  const res = await fetch(`${baseUrl}/api/registry`, { cache: 'no-store' })
-  return res.json()
+function parseCSVRow(row: string): string[] {
+  const values: string[] = []
+  let current = ''
+  let inQuotes = false
+  for (let i = 0; i < row.length; i++) {
+    const char = row[i]
+    if (char === '"') {
+      if (inQuotes && row[i + 1] === '"') { current += '"'; i++ }
+      else inQuotes = !inQuotes
+    } else if (char === ',' && !inQuotes) {
+      values.push(current); current = ''
+    } else {
+      current += char
+    }
+  }
+  values.push(current)
+  return values
+}
+
+function parseCSV(text: string): Record<string, string>[] {
+  const lines = text.trim().split(/\r?\n/)
+  const headers = parseCSVRow(lines[0]).map((h) => h.toLowerCase().trim())
+  return lines.slice(1).filter(Boolean).map((line) => {
+    const values = parseCSVRow(line)
+    return Object.fromEntries(headers.map((h, i) => [h, (values[i] ?? '').trim()]))
+  })
+}
+
+async function getItems(): Promise<RegistryRow[]> {
+  const [sheetRes, reserved] = await Promise.all([
+    fetch(process.env.REGISTRY_SHEET_URL!, { cache: 'no-store' }),
+    (async () => {
+      if (process.env.RSVPs_KV_REST_API_URL) {
+        const { createClient } = await import('@vercel/kv')
+        const kv = createClient({
+          url: process.env.RSVPs_KV_REST_API_URL!,
+          token: process.env.RSVPs_KV_REST_API_TOKEN!,
+        })
+        return (await kv.hgetall<Record<string, string>>('reserved')) ?? {}
+      }
+      const file = path.join(process.cwd(), 'data', 'registry.json')
+      return JSON.parse(await fs.readFile(file, 'utf-8')) as Record<string, string>
+    })(),
+  ])
+
+  const rows = parseCSV(await sheetRes.text())
+  return rows.map((row) => ({
+    id: row.id,
+    name: row.name,
+    store: row.store,
+    price: row.price,
+    link: row.link,
+    reserved: !!reserved[row.id],
+    reservedBy: reserved[row.id] ?? null,
+  }))
 }
 
 export default async function AdminRegistryPage({
@@ -37,7 +85,7 @@ export default async function AdminRegistryPage({
     )
   }
 
-  const items = await getRegistryItems()
+  const items = await getItems()
   const reserved = items.filter((i) => i.reserved)
   const available = items.filter((i) => !i.reserved)
 
