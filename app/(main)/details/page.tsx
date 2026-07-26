@@ -27,7 +27,7 @@ export default function DetailsPage() {
         <section>
           <p className="text-sm tracking-[0.25em] uppercase text-[#6C0820] mb-4 font-semibold">Suggested attire</p>
           <p className="text-base text-[#F2DCDB] font-light leading-relaxed">
-            Technically speaking, we&apos;re looking for cocktail attire, but the happy couple encourages you to dress as fun and wild as you dare! The more over the top, the better.
+            Technically speaking, we&apos;re looking for cocktail attire, but the happy couple encourages you to dress as fun and wild as you dare! The more over the top, the better. Maria in particular would be THRILLED for you to be extra -- let&apos;s see your feathers, sequins, ball gowns, or costumes!!!
           </p>
         </section>
 
