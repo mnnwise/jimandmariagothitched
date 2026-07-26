@@ -20,8 +20,8 @@ async function getRsvps(): Promise<RsvpRecord[]> {
       url: process.env.RSVPs_KV_REST_API_URL!,
       token: process.env.RSVPs_KV_REST_API_TOKEN!,
     })
-    const store = (await kv.hgetall<Record<string, string>>('rsvps')) ?? {}
-    return Object.values(store).map((v) => JSON.parse(v))
+    const store = (await kv.hgetall<Record<string, RsvpRecord>>('rsvps')) ?? {}
+    return Object.values(store)
   }
   const file = path.join(process.cwd(), 'data', 'rsvps.json')
   const store: Record<string, string> = JSON.parse(await fs.readFile(file, 'utf-8'))
